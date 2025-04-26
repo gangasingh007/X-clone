@@ -17,10 +17,10 @@ const userSchema = new mongoose.Schema({
     },
     email : {
         type :String,
-        requird :true,
+        required :true,
         unique : true
     },
-    fololowers : [{
+    followers : [{
         type : mongoose.Schema.Types.ObjectId,
         ref : "User",
         default : []
@@ -47,3 +47,7 @@ const userSchema = new mongoose.Schema({
         default : ""
     }
 })
+
+const User = mongoose.model("User",userSchema);
+
+export default User;
