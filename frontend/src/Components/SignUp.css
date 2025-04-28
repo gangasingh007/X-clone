@@ -1,6 +1,6 @@
 /* SignUp.css */
 .signup-container {
-    background-color: #000000;
+    background-color: #000000a0;
     border: 1px solid #00b7ff29;
     padding: 2rem 2.5rem;
     border-top-color: #00b7ff32;
@@ -11,7 +11,7 @@
     align-items: center;
     width: 420px;
     gap: 1rem;
-    background: none;
+    /* background: none; */
     
   }
   
@@ -21,7 +21,11 @@
     border: 1px solid rgba(255, 255, 255, 0.148);
     border-radius: 5px;
     padding: 1px;
-    box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.153);
+    transition: all ease-in-out 0.3s;
+    box-shadow: 0px 0px 10px #ffffff27;
+  }
+  .logo-img:hover{
+    box-shadow: 0px 0px 20px #ffffff27 ;
   }
   
   h2 {
@@ -55,7 +59,7 @@
   }
   
   button {
-    width: 100%;
+    width: 107%;
     padding: 0.9rem;
     background-color: #185cc1;
     color: #0d0d0d;
@@ -69,7 +73,7 @@
   
   button:hover {
     background-color: #00a3e0;
-    transform: scale(1.05);
+    transform: scale(1.00001);
   }
   
   /* Added modern and aesthetic linear gradient background for the app */
@@ -99,6 +103,6 @@
   .signup-container {
     position: relative;
     z-index: 2;
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
+    /* backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(5px); */
   }

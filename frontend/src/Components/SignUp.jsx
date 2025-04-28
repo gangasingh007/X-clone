@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import './SignUp.css';
 
 const SignUp = () => {
@@ -37,46 +38,90 @@ const SignUp = () => {
     }
   };
 
+  // Container animation
+  const containerVariants = {
+    hidden: { y: -100, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1,
+      transition: { 
+        duration: 0.6, 
+        ease: "easeOut",
+        when: "beforeChildren",
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  // Children elements animation
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        duration: 0.4, 
+        ease: "easeOut" 
+      }
+    }
+  };
+
   return (
-    <div className="signup-container">
-      <div className="logo">
+    <motion.div 
+      className="signup-container"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <motion.div className="logo" variants={itemVariants}>
         <img
           src="https://freepnglogo.com/images/all_img/1725374683twitter-x-logo.png"
           className="logo-img"
           alt="Logo"
         />
-      </div>
-      <h2>Sign Up</h2>
-      <input
+      </motion.div>
+      <motion.h2 variants={itemVariants}>Sign Up</motion.h2>
+      <motion.input
+        variants={itemVariants}
         type="email"
         name="email"
         placeholder="Enter your Email"
         required
         onChange={handleChange}
       />
-      <input
+      <motion.input
+        variants={itemVariants}
         type="password"
         name="password"
         placeholder="Enter your Password"
         required
         onChange={handleChange}
       />
-      <input
+      <motion.input
+        variants={itemVariants}
         type="text"
         name="username"
         placeholder="Enter Username"
         required
         onChange={handleChange}
       />
-      <input
+      <motion.input
+        variants={itemVariants}
         type="text"
         name="fullname"
         placeholder="Enter Your Full Name"
         required
         onChange={handleChange}
       />
-      <button onClick={signUpHandler}>Sign Up</button>
-    </div>
+      <motion.button
+        variants={itemVariants}
+        onClick={signUpHandler}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        Sign Up
+      </motion.button>
+    </motion.div>
   );
 };
 

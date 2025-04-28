@@ -12,6 +12,6 @@ body, html, #root {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #000000 0%, #080c16 90%, #000000 100%);
+  background: linear-gradient(135deg, #000000 0%, #080c16 55%, #000000 100%);
   overflow: hidden;
 }

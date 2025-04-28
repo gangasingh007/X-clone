@@ -29,7 +29,7 @@ export async function signUp(req, res) {
             fullname,
             email,
         });
-
+        
         res.status(200).json({
             username: newUser.username,
             email: newUser.email,
