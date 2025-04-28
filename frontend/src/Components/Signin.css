@@ -1,5 +1,4 @@
-/* SignUp.css */
-.signup-container {
+.SignIn-container {
     background-color: #000000a0;
     border: 1px solid #00b7ff29;
     padding: 2rem 2.5rem;
@@ -11,10 +10,12 @@
     align-items: center;
     width: 420px;
     gap: 1rem;
+    position: relative;
+    z-index: 2;
     /* background: none; */
     
   }
-  
+
   .logo-img {
     width: 80px;
     margin-bottom: 0.25rem;
@@ -24,10 +25,11 @@
     transition: all ease-in-out 0.3s;
     box-shadow: 0px 0px 10px #ffffff27;
   }
+
   .logo-img:hover{
     box-shadow: 0px 0px 20px #ffffff27 ;
   }
-  
+
   h2 {
     color: #00b7ff;
     text-shadow: 0 0 10px #185cc1;
@@ -36,26 +38,6 @@
     transition: all ease 0.3s;
   }
   
-  .link{
-    color: #00b7ff;
-    text-shadow: 0 0 10px #185cc1;
-    text-decoration: none;
-    font-size: 1rem;
-    cursor: pointer;
-    padding: 0 3px;
-    text-decoration: underline;
-    transition: all ease-in-out 0.2s;
-  }
-
-  .link:hover{
-    color: #185cc1;
-  }
-
-  h5{
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.567);
-  }
-
   h2:hover {
     text-shadow: 0 0 20px #1573ff;
   }
@@ -66,7 +48,7 @@
     border: none;
     border-radius: 8px;
     background-color: #000000;
-    color: #e0e0e06c;
+    color: #e0e0e0;
     font-size: 1rem;
     box-shadow: 0 0 3px #00b7ff99;
     transition: box-shadow 0.3s ease, background-color 0.3s ease;
@@ -95,31 +77,7 @@
     background-color: #00a3e0;
     transform: scale(1.00001);
   }
-  
-  /* Added modern and aesthetic linear gradient background for the app */
-  .app {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #0d0d0d 0%, #111827 90%, #0a1022 100%);
-    position: relative;
-    overflow: hidden;
-  }
-  
-  /* Optional subtle glow effect that matches your theme */
-  .app::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 25% 25%, rgba(0, 183, 255, 0.03) 0%, transparent 70%);
-    z-index: 1;
-  }
-  
-  /* Ensure the signup container appears above the background effects */
+
   .signup-container {
     position: relative;
     z-index: 2;

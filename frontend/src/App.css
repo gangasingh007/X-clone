@@ -3,8 +3,8 @@ body, html, #root {
   padding: 0;
   height: 100%;
   width: 100%;
-  background: #182d52;
-  font-family: 'Poppins', sans-serif;
+  background: #0b1527;
+  font-family: "Poppins", sans-serif
 }
 
 .app-container {
@@ -12,6 +12,6 @@ body, html, #root {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #000000 0%, #080c16 55%, #000000 100%);
+  background: linear-gradient(135deg, #000000 0%, #060b15 80% , #000000 100%);
   overflow: hidden;
 }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import './SignUp.css';
+import SignIn from './SignIn';
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -121,6 +122,9 @@ const SignUp = () => {
       >
         Sign Up
       </motion.button>
+      <motion.h5 variants={itemVariants}>
+        Already Have an Account ? <span ><a className='link' href="/signin">Sign In</a></span>
+      </motion.h5>
     </motion.div>
   );
 };
