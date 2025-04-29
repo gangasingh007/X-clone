@@ -3,7 +3,14 @@ import { motion } from 'framer-motion';
 import './Signin.css';
 
 const SignIn = () => {
-  // Container animation
+  
+  const [username, setusername] = useState("");
+  const [password, setpassword] = useState("");
+
+  const signinhanddler =async ()=>{
+    fetch()
+  }
+
   const containerVariants = {
     hidden: { y: -100, opacity: 0 },
     visible: { 
@@ -50,17 +57,27 @@ const SignIn = () => {
         type="text" 
         placeholder='Enter Your Username' 
         variants={itemVariants}
+        onChange={(e)=>{
+          const value = e.target.value;
+          setusername(value)
+          
+        }}
       />
       <motion.input 
         type="password" 
         placeholder='Enter your Password'
         variants={itemVariants}
+        onChange={(e)=>{
+          const value = e.target.value;
+          setpassword(password);
+        }}
       />
       <motion.button 
         className='sign-in-btn'
         variants={itemVariants}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
+        onClick={signinhanddler}
       >
         Sign In
       </motion.button>

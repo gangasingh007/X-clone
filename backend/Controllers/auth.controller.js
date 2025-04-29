@@ -1,3 +1,4 @@
+import { generateTokenandCookie } from "../Lib/Utils/cookieandtokengenerator.js";
 import User from "../Models/user.model.js";
 import { CreateUser } from "../Types/user.check.js";
 import bcrypt from "bcryptjs";
@@ -29,7 +30,7 @@ export async function signUp(req, res) {
             fullname,
             email,
         });
-        
+        generateTokenandCookie(newUser._id,res);
         res.status(200).json({
             username: newUser.username,
             email: newUser.email,
