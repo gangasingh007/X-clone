@@ -6,3 +6,8 @@ export const CreateUser = zod.object({
     fullname : zod.string(),
     email : zod.string()
 })
+
+export const validateUser = zod.object({
+    username : zod.string(),
+    password : zod.string(),
+})

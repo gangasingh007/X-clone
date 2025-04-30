@@ -1,6 +1,6 @@
 import { generateTokenandCookie } from "../Lib/Utils/cookieandtokengenerator.js";
 import User from "../Models/user.model.js";
-import { CreateUser } from "../Types/user.check.js";
+import { CreateUser, validateUser } from "../Types/user.check.js";
 import bcrypt from "bcryptjs";
 
 export async function signUp(req, res) {
@@ -53,12 +53,30 @@ export async function signUp(req, res) {
         });
     }
 }
-export async function logOut(req,res){
-    res.json({
-        msg :"hello there "
-    })
-}
 export async function signIn(req,res){
+    const {username,passoword} = req.body;
+    const paylod = req.body;
+
+    const parsedPayload = validateUser.safeParse(paylod)
+
+    if (!parsedPayload){
+        res.status(411).json({
+            msg : "Please send the right inputs"
+        })
+        return
+    }
+
+    try {
+        
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({
+            msg: "There was an error creating the user",
+            error: error.message
+        });
+    }
+}
+export async function logOut(req,res){
     res.json({
         msg :"hello there "
     })

@@ -3,13 +3,7 @@ import { motion } from 'framer-motion';
 import './Signin.css';
 
 const SignIn = () => {
-  
-  const [username, setusername] = useState("");
-  const [password, setpassword] = useState("");
-
-  const signinhanddler =async ()=>{
-    fetch()
-  }
+ 
 
   const containerVariants = {
     hidden: { y: -100, opacity: 0 },
@@ -77,7 +71,7 @@ const SignIn = () => {
         variants={itemVariants}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        onClick={signinhanddler}
+  
       >
         Sign In
       </motion.button>
