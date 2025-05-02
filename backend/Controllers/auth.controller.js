@@ -53,6 +53,7 @@ export async function signUp(req, res) {
         });
     }
 }
+
 export async function signIn(req,res){
     const {username,passoword} = req.body;
     const paylod = req.body;
