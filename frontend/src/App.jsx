@@ -3,17 +3,21 @@ import SignUp from './Components/SignUp'
 import { Routes, Route } from "react-router-dom";
 import './App.css'
 import SignIn from './Components/SignIn';
-// import { signIn, signUp } from '../../backend/Controllers/auth.controller';
+// import AuthenticationScreen from './Screens/AuthenticationScreen';
+import LandingPage from './Screens/LandingPage';
+
 
 const App = () => {
   return (
     <>
-     <div className="app-container">
-     <Routes>
-        <Route path = "/" element={<SignUp/>}></Route>
-        <Route path = "/signin" element={<SignIn/>}></Route>
-      </Routes>
-     </div>
+     
+     
+      <LandingPage/>
+    
+      <Routes>
+            <Route path="/login" element={<SignIn/>}></Route>
+            <Route path="/signup" element={<SignUp/>}></Route>
+          </Routes>
     </>
   )
 }
