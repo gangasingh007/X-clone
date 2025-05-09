@@ -19,11 +19,11 @@
   .logo-img {
     width: 80px;
     margin-bottom: 0.25rem;
-    border: 1px solid rgba(255, 255, 255, 0.148);
+    border: 1px solid #ffffff0c;
     border-radius: 5px;
     padding: 1px;
     transition: all ease-in-out 0.3s;
-    box-shadow: 0px 0px 10px #ffffff27;
+    box-shadow: 0px 0px 50px #ffffff22;
   }
   .logo-img:hover{
     box-shadow: 0px 0px 20px #ffffff27 ;

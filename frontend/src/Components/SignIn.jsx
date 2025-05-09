@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './Signin.css';
+import Logo from '../assets/x-logo.svg'
 
 const SignIn = () => {
  
@@ -41,7 +42,7 @@ const SignIn = () => {
     >
       <motion.div className="logo" variants={itemVariants}>
         <img 
-          src="https://freepnglogo.com/images/all_img/1725374683twitter-x-logo.png" 
+          src={Logo} 
           className='logo-img' 
           alt="Logo" 
         />
@@ -76,7 +77,7 @@ const SignIn = () => {
         Sign In
       </motion.button>
        <motion.h5 variants={itemVariants}>
-              Create an Account ? <span ><a className='link' href="/">Sign Up</a></span>
+              Create an Account ? <span ><a className='link' href="/SignUp">Sign Up</a></span>
             </motion.h5>
     </motion.div>
   );

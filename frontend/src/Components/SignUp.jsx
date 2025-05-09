@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import './SignUp.css';
-import SignIn from './SignIn';
+import Logo from '../assets/x-logo.svg'
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -76,7 +76,7 @@ const SignUp = () => {
     >
       <motion.div className="logo" variants={itemVariants}>
         <img
-          src="https://freepnglogo.com/images/all_img/1725374683twitter-x-logo.png"
+          src={Logo}
           className="logo-img"
           alt="Logo"
         />
