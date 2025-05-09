@@ -43,8 +43,6 @@ export async function signUp(req, res) {
             coverimg: newUser.coverimg
         });
 
-        console.log(newUser);
-
     } catch (error) {
         console.error(error);
         res.status(500).json({
@@ -54,29 +52,58 @@ export async function signUp(req, res) {
     }
 }
 
-export async function signIn(req,res){
-    const {username,passoword} = req.body;
-    const paylod = req.body;
-
-    const parsedPayload = validateUser.safeParse(paylod)
-
-    if (!parsedPayload){
-        res.status(411).json({
-            msg : "Please send the right inputs"
-        })
-        return
-    }
-
+export async function signIn(req, res) {
     try {
-        
+        const { username, password } = req.body;
+        const payload = req.body;
+
+        const parsedPayload = validateUser.safeParse(payload);
+
+        if (!parsedPayload.success) {
+            return res.status(411).json({
+                msg: "Please send the right inputs"
+            });
+        }
+
+        const user = await User.findOne({ username }); 
+
+        if (!user) {
+            return res.status(403).json({
+                msg: "Invalid username or password"
+            });
+        }
+
+        const isPasswordCorrect = await bcrypt.compare(password, user.password || "");
+
+        if (!isPasswordCorrect) {
+            return res.status(403).json({
+                msg: "Invalid username or password"
+            });
+        }
+
+        generateTokenandCookie(user._id, res);
+
+        res.status(200).json({
+            username: user.username,
+            email: user.email,
+            fullname: user.fullname,
+            followers: user.followers,
+            following: user.following,
+            Bio: user.Bio,
+            Link: user.Link,
+            profileimg: user.profileimg,
+            coverimg: user.coverimg
+        });
+
     } catch (error) {
         console.error(error);
         res.status(500).json({
-            msg: "There was an error creating the user",
+            msg: "There was an error during sign in",
             error: error.message
         });
     }
 }
+
 export async function logOut(req,res){
     res.json({
         msg :"hello there "
