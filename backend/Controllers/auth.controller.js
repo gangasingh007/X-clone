@@ -104,8 +104,37 @@ export async function signIn(req, res) {
     }
 }
 
-export async function logOut(req,res){
-    res.json({
-        msg :"hello there "
-    })
+export async function logOut(req, res) {
+    try {
+        res.clearCookie("jwt", {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === "production",
+            sameSite: "strict",
+        });
+
+        res.status(200).json({
+            msg: "Logout was successful",
+        });
+    } catch (error) {
+        console.error("There was an error logging out:", error);
+        res.status(500).json({
+            msg: "Error in logging out",
+            error: error.message,
+        });
+    }
 }
+
+export async function AllUsers(req,res) {
+    try {
+        const users = await User.find({})
+        res.status(200).json({
+            users
+        })
+    } catch (error) {
+        console.log(error);
+        res.status(404).json({
+            msg : "Error in getting all the users"
+        })
+    }
+}
+
