@@ -1,10 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import './Signin.css';
 import Logo from '../assets/x-logo.svg'
 
+
 const SignIn = () => {
- 
+
+  const [username, setusername] = useState("");
+  const [password, setpassword] = useState("");
+  
+  const signinhandler = async () => {
+    try {
+      const response = await fetch('http://localhost:3000/api/auth/signin', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          username : username,
+          password : password
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to sign in');
+      }
+
+      const data = await response.json();
+      console.log('Sign in Success:', data);
+    } catch (error) {
+      console.error('There was a problem:', error);
+    }
+  };
 
   const containerVariants = {
     hidden: { y: -100, opacity: 0 },
@@ -64,7 +91,7 @@ const SignIn = () => {
         variants={itemVariants}
         onChange={(e)=>{
           const value = e.target.value;
-          setpassword(password);
+          setpassword(value);
         }}
       />
       <motion.button 
@@ -72,6 +99,7 @@ const SignIn = () => {
         variants={itemVariants}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
+        onClick={signinhandler}
   
       >
         Sign In
