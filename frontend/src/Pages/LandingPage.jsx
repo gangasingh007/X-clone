@@ -999,13 +999,13 @@ const LandingPage = () => {
                 <div className="logo-icon">
                   <XLogo />
                 </div>
-                <span>X Connect</span>
+                <span></span>
               </div>
               <p className="footer-about">
                 Connecting the world through real-time conversations and authentic connections.
               </p>
               <div className="social-icons">
-                <a href="#" className="social-icon"><XLogo /></a>
+                {/* <a href="#" className="social-icon"><XLogo /></a> */}
                 <a href="#" className="social-icon"><FacebookIcon /></a>
                 <a href="#" className="social-icon"><InstagramIcon /></a>
                 <a href="#" className="social-icon"><LinkedInIcon /></a>
