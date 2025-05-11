@@ -77,21 +77,7 @@ const LandingPage = () => {
       }
       
       .theme-toggle {
-        background: none;
-        border: none;
-        color: var(--text-color);
-        font-size: 1.5rem;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background-color: var(--secondary-bg);
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
+        display:none;
       }
       
       .theme-toggle:hover {
