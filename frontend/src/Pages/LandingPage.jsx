@@ -37,7 +37,6 @@ const LandingPage = () => {
       body {
         margin: 0;
         padding: 0;
-        font-family: var(--font-family);
         color: var(--text-color);
         background-color: var(--background-color);
         transition: all 0.3s ease;
