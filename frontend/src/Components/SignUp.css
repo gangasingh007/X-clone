@@ -1,129 +1,284 @@
-/* SignUp.css */
+/* Enhanced SignUp.css with improved colors and modern aesthetics */
+
 .signup-container {
-    background-color: #000000a0;
-    border: 1px solid #00b7ff29;
-    padding: 2rem 2.5rem;
-    border-top-color: #00b7ff32;
-    border-radius: 12px;
-    box-shadow: 0 20px 50px #00b7ff32;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 420px;
-    width: 60vw;
+  background: linear-gradient(145deg, rgba(0, 0, 0, 0.95), rgba(8, 18, 36, 0.9));
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 2.5rem 3rem;
+  border-radius: 16px;
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.4),
+    0 8px 32px rgba(56, 189, 248, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 420px;
+  width: 60vw;
+  gap: 1.25rem;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle animated border effect */
+.signup-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(45deg, 
+    rgba(56, 189, 248, 0.3), 
+    rgba(147, 51, 234, 0.2), 
+    rgba(56, 189, 248, 0.3)
+  );
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: subtract;
+  -webkit-mask-composite: xor;
+  z-index: -1;
+}
+
+.logo-img {
+  width: 80px;
+  margin-bottom: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 4px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 4px 20px rgba(56, 189, 248, 0.2),
+    0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.logo-img:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 30px rgba(56, 189, 248, 0.35),
+    0 4px 16px rgba(0, 0, 0, 0.4);
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+h2 {
+  background: linear-gradient(135deg, #38bdf8, #8b5cf6, #06b6d4);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+  font-size: 1.875rem;
+  font-weight: 700;
+  text-align: center;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 8px rgba(56, 189, 248, 0.3));
+}
+
+h2:hover {
+  transform: translateY(-1px);
+  filter: drop-shadow(0 4px 12px rgba(56, 189, 248, 0.5));
+}
+
+.link {
+  background: linear-gradient(135deg, #38bdf8, #06b6d4);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #38bdf8, #06b6d4);
+  border-radius: 1px;
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+}
+
+.link:hover {
+  transform: translateY(-1px);
+}
+
+h5 {
+  font-size: 1rem;
+  color: rgba(203, 213, 225, 0.8);
+  font-weight: 400;
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  padding: 1.2rem 1rem;
+  border: 1px solid rgba(71, 85, 105, 0.4);
+  border-radius: 10px;
+  background: linear-gradient(145deg, rgba(9, 14, 24, 0.8), rgba(1, 4, 9, 0.6));
+  color: #e2e8f0;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.3),
+    0 1px 3px rgba(56, 189, 248, 0.1);
+}
+
+input::placeholder {
+  color: rgba(148, 163, 184, 0.6);
+}
+
+input:focus {
+  transform: translateY(-1px);
+  border-color: rgba(56, 189, 248, 0.6);
+  box-shadow: 
+    0 0 0 3px rgba(56, 189, 248, 0.15),
+    0 4px 20px rgba(56, 189, 248, 0.2),
+    inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  outline: none;
+  background: linear-gradient(145deg, rgba(2, 3, 6, 0.9), rgba(10, 15, 23, 0.7));
+}
+
+button {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8, #1e40af);
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 4px 15px rgba(59, 130, 246, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8, #1e3a8a);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 25px rgba(59, 130, 246, 0.4),
+    0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 2px 8px rgba(59, 130, 246, 0.3),
+    0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Enhanced app background with better gradients and effects */
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, 
+    #0f172a 0%, 
+    #1e293b 25%, 
+    #334155 50%, 
+    #1e293b 75%, 
+    #0f172a 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated background particles effect */
+.app::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(147, 51, 234, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.04) 0%, transparent 70%);
+  z-index: 1;
+  animation: pulse 4s ease-in-out infinite alternate;
+}
+
+.app::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(56, 189, 248, 0.02) 1px, transparent 1px),
+    radial-gradient(circle at 75% 75%, rgba(147, 51, 234, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: 1;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Ensure the signup container appears above the background effects */
+.signup-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive improvements */
+@media (max-width: 480px) {
+  .signup-container {
+    padding: 2rem 1.5rem;
+    width: 90vw;
     gap: 1rem;
-    /* background: none; */
-    
-  }
-  
-  .logo-img {
-    width: 80px;
-    margin-bottom: 0.25rem;
-    border: 1px solid #ffffff0c;
-    border-radius: 5px;
-    padding: 1px;
-    transition: all ease-in-out 0.3s;
-    box-shadow: 0px 0px 50px #ffffff22;
-  }
-  .logo-img:hover{
-    box-shadow: 0px 0px 20px #ffffff27 ;
   }
   
   h2 {
-    color: #00b7ff;
-    text-shadow: 0 0 10px #185cc1;
-    margin-bottom: 1.5rem;
-    font-size: 1.8rem;
-    transition: all ease 0.3s;
-  }
-  
-  .link{
-    color: #00b7ff;
-    text-shadow: 0 0 10px #185cc1;
-    text-decoration: none;
-    font-size: 1rem;
-    cursor: pointer;
-    padding: 0 3px;
-    text-decoration: underline;
-    transition: all ease-in-out 0.2s;
-  }
-
-  .link:hover{
-    color: #185cc1;
-  }
-
-  h5{
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.567);
-  }
-
-  h2:hover {
-    text-shadow: 0 0 20px #1573ff;
+    font-size: 1.5rem;
   }
   
   input {
-    width: 100%;
-    padding: 1.1rem;
-    border: none;
-    border-radius: 8px;
-    background-color: #000000;
-    color: #e0e0e06c;
-    font-size: 1rem;
-    box-shadow: 0 0 3px #00b7ff99;
-    transition: box-shadow 0.3s ease, background-color 0.3s ease;
-  }
-  
-  input:focus {
-    scale: 1.01;
-    box-shadow: 0 0 10px rgba(0, 183, 255, 0.6);
-    outline: none;
+    padding: 1rem 0.875rem;
   }
   
   button {
-    width: 107%;
-    padding: 0.9rem;
-    background-color: #185cc1;
-    color: #0d0d0d;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 0.875rem;
   }
-  
-  button:hover {
-    background-color: #00a3e0;
-    transform: scale(1.00001);
-  }
-  
-  /* Added modern and aesthetic linear gradient background for the app */
-  .app {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #0d0d0d 0%, #111827 90%, #0a1022 100%);
-    position: relative;
-    overflow: hidden;
-  }
-  
-  /* Optional subtle glow effect that matches your theme */
-  .app::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 25% 25%, rgba(0, 183, 255, 0.03) 0%, transparent 70%);
-    z-index: 1;
-  }
-  
-  /* Ensure the signup container appears above the background effects */
-  .signup-container {
-    position: relative;
-    z-index: 2;
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-  }
+}
