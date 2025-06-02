@@ -105,7 +105,7 @@ const SignIn = () => {
         Sign In
       </motion.button>
        <motion.h5 variants={itemVariants}>
-              Create an Account ? <span ><a className='link' href="/SignUp">Sign Up</a></span>
+              Create an Account ? <span ><a className='link' href="/">Sign Up</a></span>
             </motion.h5>
     </motion.div>
   );

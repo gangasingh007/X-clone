@@ -17,6 +17,6 @@ body, html, #root {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #000000 0%, #060b15 99% , #000000 100%);
+  background: linear-gradient(145deg, rgba(0, 0, 0, 0.95), rgba(8, 18, 36, 0.9));
   overflow: hidden;
 }

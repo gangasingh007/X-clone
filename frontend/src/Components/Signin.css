@@ -1,8 +1,9 @@
-/* Enhanced SignIn.css with improved colors and modern aesthetics */
+/* Enhanced SignIn.css with improved colors, modern aesthetics, and comprehensive responsiveness */
 
 .SignIn-container {
-  background: linear-gradient(145deg, rgba(0, 0, 0, 0.95), rgba(8, 18, 36, 0.9));
+  /* background: linear-gradient(145deg, rgba(0, 0, 0, 0.95), rgba(8, 18, 36, 0.9)); */
   border: 1px solid rgba(56, 189, 248, 0.3);
+  background: none;
   padding: 2.5rem 3rem;
   border-radius: 16px;
   box-shadow: 
@@ -12,13 +13,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 420px;
+  max-width: 420px;
+  width: min(90vw, 420px);
   gap: 1.25rem;
   position: relative;
   z-index: 2;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   overflow: hidden;
+  margin: 1rem;
+  box-sizing: border-box;
 }
 
 /* Subtle animated border effect */
@@ -43,7 +47,7 @@
 }
 
 .logo-img {
-  width: 80px;
+  width: clamp(60px, 15vw, 80px);
   margin-bottom: 0.5rem;
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 8px;
@@ -68,11 +72,12 @@ h2 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 1.5rem;
-  font-size: 1.875rem;
+  font-size: clamp(1.5rem, 4vw, 1.875rem);
   font-weight: 700;
   text-align: center;
   transition: all 0.3s ease;
   filter: drop-shadow(0 2px 8px rgba(56, 189, 248, 0.3));
+  line-height: 1.2;
 }
 
 h2:hover {
@@ -82,16 +87,17 @@ h2:hover {
 
 input {
   width: 100%;
-  padding: 1.2rem 1rem;
+  padding: clamp(1rem, 2.5vw, 1.2rem) 1rem;
   border: 1px solid rgba(71, 85, 105, 0.4);
   border-radius: 10px;
- background: linear-gradient(145deg, rgba(9, 14, 24, 0.8), rgba(1, 4, 9, 0.6));
+  background: linear-gradient(145deg, rgba(9, 14, 24, 0.8), rgba(1, 4, 9, 0.6));
   color: #e2e8f0;
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 2vw, 1rem);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 
     inset 0 2px 4px rgba(0, 0, 0, 0.3),
     0 1px 3px rgba(56, 189, 248, 0.1);
+  box-sizing: border-box;
 }
 
 input::placeholder {
@@ -111,13 +117,13 @@ input:focus {
 
 button {
   width: 100%;
-  padding: 1rem;
+  padding: clamp(0.875rem, 2.5vw, 1rem);
   background: linear-gradient(135deg, #3b82f6, #1d4ed8, #1e40af);
   color: #ffffff;
   font-weight: 600;
   border: none;
   border-radius: 10px;
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 2vw, 1rem);
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 
@@ -125,6 +131,7 @@ button {
     0 2px 8px rgba(0, 0, 0, 0.2);
   position: relative;
   overflow: hidden;
+  min-height: 48px; /* Accessibility: minimum touch target size */
 }
 
 button::before {
@@ -164,7 +171,7 @@ button:active {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
   font-weight: 500;
   cursor: pointer;
   padding: 2px 4px;
@@ -195,55 +202,38 @@ button:active {
 }
 
 h5 {
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 2vw, 1rem);
   color: rgba(203, 213, 225, 0.8);
   font-weight: 400;
   text-align: center;
+  line-height: 1.4;
 }
 
-/* Responsive improvements */
-@media (max-width: 480px) {
-  .SignIn-container {
-    padding: 2rem 1.5rem;
-    width: 90vw;
-    max-width: 380px;
-    gap: 1rem;
-  }
-  
-  h2 {
-    font-size: 1.5rem;
-  }
-  
-  input {
-    padding: 1rem 0.875rem;
-  }
-  
-  button {
-    padding: 0.875rem;
-  }
-}
-
-/* Error/Success message styling (if needed) */
+/* Error/Success message styling with responsive design */
 .error-message {
   color: #ef4444;
   background: rgba(239, 68, 68, 0.1);
   border: 1px solid rgba(239, 68, 68, 0.3);
-  padding: 0.75rem;
+  padding: clamp(0.5rem, 2vw, 0.75rem);
   border-radius: 8px;
-  font-size: 0.875rem;
+  font-size: clamp(0.75rem, 1.8vw, 0.875rem);
   text-align: center;
   margin-top: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .success-message {
   color: #10b981;
   background: rgba(16, 185, 129, 0.1);
   border: 1px solid rgba(16, 185, 129, 0.3);
-  padding: 0.75rem;
+  padding: clamp(0.5rem, 2vw, 0.75rem);
   border-radius: 8px;
-  font-size: 0.875rem;
+  font-size: clamp(0.75rem, 1.8vw, 0.875rem);
   text-align: center;
   margin-top: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Loading state for button */
@@ -257,9 +247,9 @@ h5 {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 20px;
-  height: 20px;
-  margin: -10px 0 0 -10px;
+  width: clamp(16px, 4vw, 20px);
+  height: clamp(16px, 4vw, 20px);
+  margin: clamp(-8px, -2vw, -10px) 0 0 clamp(-8px, -2vw, -10px);
   border: 2px solid transparent;
   border-top: 2px solid #ffffff;
   border-radius: 50%;
@@ -269,4 +259,221 @@ h5 {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+/* Comprehensive responsive breakpoints */
+
+/* Large desktops and up */
+@media (min-width: 1440px) {
+  .SignIn-container {
+    max-width: 480px;
+    padding: 3rem 3.5rem;
+    gap: 1.5rem;
+  }
+  
+  .logo-img {
+    width: 90px;
+  }
+}
+
+/* Standard desktops */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .SignIn-container {
+    max-width: 450px;
+    padding: 2.75rem 3.25rem;
+  }
+}
+
+/* Tablets (landscape) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .SignIn-container {
+    max-width: 400px;
+    width: 70vw;
+    padding: 2.25rem 2.75rem;
+  }
+  
+  .logo-img {
+    width: 75px;
+  }
+}
+
+/* Tablets (portrait) and large phones */
+@media (min-width: 481px) and (max-width: 767px) {
+  .SignIn-container {
+    width: 85vw;
+    max-width: 380px;
+    padding: 2rem 2.25rem;
+    gap: 1.125rem;
+  }
+  
+  .logo-img {
+    width: 70px;
+  }
+  
+  h2 {
+    margin-bottom: 1.25rem;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .SignIn-container {
+    padding: 1.5rem 1.25rem;
+    width: 95vw;
+    max-width: 380px;
+    gap: 1rem;
+    border-radius: 12px;
+    margin: 0.5rem;
+  }
+  
+  .logo-img {
+    width: 60px;
+    margin-bottom: 0.25rem;
+  }
+  
+  h2 {
+    font-size: 1.375rem;
+    margin-bottom: 1rem;
+  }
+  
+  input {
+    padding: 0.875rem;
+    border-radius: 8px;
+  }
+  
+  button {
+    padding: 0.875rem;
+    border-radius: 8px;
+    min-height: 44px;
+  }
+  
+  h5 {
+    font-size: 0.875rem;
+  }
+  
+  .link {
+    font-size: 0.875rem;
+  }
+  
+  .error-message,
+  .success-message {
+    padding: 0.5rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .SignIn-container {
+    padding: 1.25rem 1rem;
+    width: 98vw;
+    gap: 0.875rem;
+  }
+  
+  .logo-img {
+    width: 50px;
+  }
+  
+  h2 {
+    font-size: 1.25rem;
+  }
+  
+  input, button {
+    padding: 0.75rem;
+    font-size: 0.875rem;
+  }
+  
+  .error-message,
+  .success-message {
+    padding: 0.375rem;
+    font-size: 0.7rem;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .logo-img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* Landscape orientation adjustments for mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .SignIn-container {
+    margin: 0.25rem;
+    padding: 1.5rem 2rem;
+    gap: 0.875rem;
+  }
+  
+  h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+  
+  .logo-img {
+    width: 60px;
+    margin-bottom: 0.25rem;
+  }
+}
+
+/* Accessibility: Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .button-loading::after {
+    animation: none;
+  }
+}
+
+/* Focus visible for better keyboard navigation */
+button:focus-visible,
+input:focus-visible,
+.link:focus-visible {
+  outline: 2px solid rgba(56, 189, 248, 0.8);
+  outline-offset: 2px;
+}
+
+/* Container queries support (progressive enhancement) */
+@supports (container-type: inline-size) {
+  .SignIn-container {
+    container-type: inline-size;
+  }
+  
+  @container (max-width: 350px) {
+    h2 {
+      font-size: 1.25rem;
+    }
+    
+    input, button {
+      padding: 0.75rem;
+    }
+    
+    .error-message,
+    .success-message {
+      padding: 0.375rem;
+      font-size: 0.7rem;
+    }
+  }
+}
+
+/* Print styles (optional) */
+@media print {
+  .SignIn-container {
+    box-shadow: none;
+    background: white;
+    border: 1px solid #ccc;
+  }
+  
+  .SignIn-container::before {
+    display: none;
+  }
+  
+  button {
+    background: #333;
+  }
 }
