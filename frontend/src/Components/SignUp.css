@@ -1,4 +1,3 @@
-/* Enhanced SignUp.css with improved colors and modern aesthetics */
 
 .signup-container {
   background: linear-gradient(145deg, rgba(0, 0, 0, 0.95), rgba(8, 18, 36, 0.9));
@@ -63,7 +62,7 @@
 }
 
 h2 {
-  background: linear-gradient(135deg, #38bdf8, #8b5cf6, #06b6d4);
+  background: linear-gradient(135deg, #5d68fe, #0663d4);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

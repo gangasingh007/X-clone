@@ -4,8 +4,13 @@ body, html, #root {
   height: 100%;
   width: 100%;
   background: #0b1527;
-  font-family: "Poppins", sans-serif
-}
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;}
 
 .app-container {
   min-height: 100vh;
